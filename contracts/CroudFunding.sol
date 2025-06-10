@@ -8,6 +8,9 @@ contract CroudFunding {
     uint256 public deadline;
     address public owner;
 
+    enum CampaginState {Active, Successful, Failed}
+    CampaginState public state;
+
     struct Tier {
         string name;
         uint256 amount;
@@ -21,6 +24,11 @@ require(msg.sender == owner, "Not the owner");
 _;
     }
 
+    modifier campaignOpen(){
+        require(state == CampaginState.Active, "Campaign is not active ");
+        _;
+    }
+
     constructor(
         string memory _name,
         string memory _description,
@@ -32,13 +40,25 @@ _;
             goal = _goal;
             deadline = block.timestamp + (_durationInDays * 1 days);
             owner = msg.sender;
+            state = CampaginState.Active;
         }
 
-        function fund(uint256 _tierIndex) public payable {
-            require(block.timestamp < deadline, "Campaign has ended");
+        function checkAndUpdateCampaginState() internal {
+            if (state == CampaginState.Active) {
+                if (block.timestamp >= deadline) {
+                    state = address(this).balance >= goal ? CampaginState.Successful : CampaginState.Failed;
+                } else {
+  state = address(this).balance >= goal ? CampaginState.Successful : CampaginState.Active;
+                }
+            }
+        }
+
+        function fund(uint256 _tierIndex) public payable campaignOpen {
             require(_tierIndex < tiers.length, "tiers does not exits"); 
             require(msg.value == tiers[_tierIndex].amount, "incorrect amount");
             tiers[_tierIndex].backers++;
+
+            checkAndUpdateCampaginState();
         }
 
         function addTier( string memory _name,
@@ -58,9 +78,8 @@ _;
 
 
         function withdraw() public onlyOwner{
-
-            require(address(this).balance >= goal, "Goal has not been reached");
-
+checkAndUpdateCampaginState();
+require(state == CampaginState.Successful, "Campagin not successful");
             uint256 balance = address(this).balance;
             require(balance > 0, "No balance to withdraw.");
 

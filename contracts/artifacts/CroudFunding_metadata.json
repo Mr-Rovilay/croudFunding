@@ -154,6 +154,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum CroudFunding.CampaginState",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -218,11 +231,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x6a7670f54ed57101ee9fa24a8f861a43c2cbed9590b9b557a9ade7c4b09df776",
+			"keccak256": "0x938d680fd1f86a942b18bb19c31629d79417568c274fe8639e15e4d781688bd1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dc8549aaa83fcaf79051e69f45a01863d6228a3ed96cb6f2e04efad69a9630e8",
-				"dweb:/ipfs/QmcLgaNpWdUpPzJhg6NBAJpr2Ctm5JWpRAMpZq7mcY4izG"
+				"bzz-raw://e753b35178fc49608a3bb91575561ff75375b07f2c4555c60877ce6e8ea6a4ad",
+				"dweb:/ipfs/QmUUEyc7fpJZq5tMs4NT3yTQtScD9jZhvUwnvYWMer8vMz"
 			]
 		}
 	},
