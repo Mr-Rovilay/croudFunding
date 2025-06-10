@@ -152,11 +152,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x2bb33514ef3e3a0f34c051d3f24f9deb211dc547305acf180aa2300922f81f50",
+			"keccak256": "0xea23509e174929a114c723c5a1fb0b5ac4206620bf84688f2ce9200a4ca0c759",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a768b6ab1bcee65d4d0d3014a227349244bcac52bc7d534377fcc1b40fd65c53",
-				"dweb:/ipfs/QmcvqURc3dwTqFsyPiN1LzVrbgdJGPCPg1JTYaTUY2EbBD"
+				"bzz-raw://8444d77cd1862a6bb0f1af3c7f88dd7604f56445c488c4e995e83d0c6a8bd12b",
+				"dweb:/ipfs/QmWoqWxUeNgJX7u36PBHxYQHCh1mhyW4WwG9Dt2sywrHZ4"
 			]
 		}
 	},

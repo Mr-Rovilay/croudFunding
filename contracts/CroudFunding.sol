@@ -31,9 +31,11 @@ contract CroudFunding {
             uint256 balance = address(this).balance;
             require(balance > 0, "No balance to withdraw.");
 
-            payable(owner).transfer(balance)
+            payable(owner).transfer(balance);
         }
 
-        function getContractBalance() public view returns (uint256) {}
+        function getContractBalance() public view returns (uint256) {
+            return address(this).balance
+        }
     
 }
