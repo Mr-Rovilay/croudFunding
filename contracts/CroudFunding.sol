@@ -35,7 +35,7 @@ contract CroudFunding {
         }
 
         function getContractBalance() public view returns (uint256) {
-            return address(this).balance
+            return address(this).balance;
         }
     
 }
