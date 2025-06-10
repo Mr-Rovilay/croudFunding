@@ -24,7 +24,15 @@ contract CroudFunding {
             require(msg.value > 0, "Must be greater than 0.");
             require(block.timestamp < deadline, "Campaign has ended");
         }
-        function withdraw() public {}
+        function withdraw() public {
+            require(msg.sender == owner, "Not the creator of this contract");
+            require(address(this).balance >= goal, "Goal has not been reached");
+
+            uint256 balance = address(this).balance;
+            require(balance > 0, "No balance to withdraw.");
+
+            payable(owner).transfer(balance)
+        }
 
         function getContractBalance() public view returns (uint256) {}
     
