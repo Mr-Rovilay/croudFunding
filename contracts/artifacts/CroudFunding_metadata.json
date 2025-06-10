@@ -117,6 +117,35 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tiers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "backers",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "withdraw",
 				"outputs": [],
@@ -152,11 +181,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x41aef3f4eeeef995d833d046687d9cbfd321b9e5e929d8d28b31a37d9e949187",
+			"keccak256": "0xb55bb5bf225c27433740271e73b4547553576b4faffaaf8bbd952d4b9b2ab0d5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8024e40408e3d4ef6348390ed168671fd97d2ade9817685e874d65831c3abafd",
-				"dweb:/ipfs/Qmf7Y5YhzsH43djBwVgtvY1t8yBX4PZZuBNjiCLULQ34vh"
+				"bzz-raw://8b5ed66cb3f6508913eb6631798e2c5e478f8a0831b6ee4ca246f69415ce7482",
+				"dweb:/ipfs/QmfTvQfiqy6T2gv4tQ2RrncrnTL77gq6WVGcJeRHYGyk9W"
 			]
 		}
 	},

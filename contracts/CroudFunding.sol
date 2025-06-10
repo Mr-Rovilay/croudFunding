@@ -8,6 +8,19 @@ contract CroudFunding {
     uint256 public deadline;
     address public owner;
 
+    struct Tier {
+        string name;
+        uint256 amount;
+        uint256 backers;
+    }
+
+    Tier[] public tiers;
+
+    modifier onlyOwner() {
+require(msg.sender == owner, "Not the owner");
+_;
+    }
+
     constructor(
         string memory _name,
         string memory _description,
