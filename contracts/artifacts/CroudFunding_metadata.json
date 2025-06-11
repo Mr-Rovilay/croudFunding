@@ -50,6 +50,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "backers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalContribution",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "deadline",
 				"outputs": [
@@ -115,6 +134,30 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_backer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tierIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "hasFundedTier",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -138,6 +181,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refund",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -231,11 +281,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x938d680fd1f86a942b18bb19c31629d79417568c274fe8639e15e4d781688bd1",
+			"keccak256": "0x5fc22e025f6e397e05d347060e2b8ba814c1db9d476ceaeb3c840b6aa804280a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e753b35178fc49608a3bb91575561ff75375b07f2c4555c60877ce6e8ea6a4ad",
-				"dweb:/ipfs/QmUUEyc7fpJZq5tMs4NT3yTQtScD9jZhvUwnvYWMer8vMz"
+				"bzz-raw://7b35fc6b24296fa4d8320480c8af3bae0b812a8acc0286cbe15748a656a24fb2",
+				"dweb:/ipfs/QmRgw72HogSNPPUpzYzWvD7My8am7XB3v4EPUvasjdQSGD"
 			]
 		}
 	},

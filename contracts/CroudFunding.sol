@@ -17,7 +17,14 @@ contract CroudFunding {
         uint256 backers;
     }
 
+    struct Backer {
+        uint256 totalContribution;
+        mapping(uint256 => bool) fundedTiers; 
+    }
+
     Tier[] public tiers;
+
+    mapping(address => Backer ) public backers;
 
     modifier onlyOwner() {
 require(msg.sender == owner, "Not the owner");
@@ -58,6 +65,9 @@ _;
             require(msg.value == tiers[_tierIndex].amount, "incorrect amount");
             tiers[_tierIndex].backers++;
 
+            backers[msg.sender].totalContribution += msg.value;
+            backers[msg.sender].fundedTiers[_tierIndex] = true;
+
             checkAndUpdateCampaginState();
         }
 
@@ -89,5 +99,21 @@ require(state == CampaginState.Successful, "Campagin not successful");
         function getContractBalance() public view returns (uint256) {
             return address(this).balance;
         }
+
+        function refund() public {
+            checkAndUpdateCampaginState();
+         require(state == CampaginState.Failed, "Refunds not successful");
+            uint256 amount = backers[msg.sender].totalContribution;
+            require(amount > 0, "No Contrubution Refunded");
+
+            backers[msg.sender].totalContribution = 0;
+            payable(msg.sender).transfer(amount); 
+
+        }
+
+        function hasFundedTier(address _backer, uint256 _tierIndex) public view returns (bool){
+            return backers[_backer].fundedTiers[_tierIndex];
+        }
+    
     
 }
