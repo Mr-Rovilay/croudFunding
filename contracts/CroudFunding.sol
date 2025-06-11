@@ -7,6 +7,7 @@ contract CroudFunding {
     uint256 public goal;
     uint256 public deadline;
     address public owner;
+    bool public paused;
 
     enum CampaginState {Active, Successful, Failed}
     CampaginState public state;
@@ -36,6 +37,11 @@ _;
         _;
     }
 
+    modifier notPaused() {
+        require(!paused, "Contract is Pasued");
+        _;
+    }
+
     constructor(
         string memory _name,
         string memory _description,
@@ -60,7 +66,7 @@ _;
             }
         }
 
-        function fund(uint256 _tierIndex) public payable campaignOpen {
+        function fund(uint256 _tierIndex) public payable campaignOpen notPaused{
             require(_tierIndex < tiers.length, "tiers does not exits"); 
             require(msg.value == tiers[_tierIndex].amount, "incorrect amount");
             tiers[_tierIndex].backers++;
@@ -113,6 +119,26 @@ require(state == CampaginState.Successful, "Campagin not successful");
 
         function hasFundedTier(address _backer, uint256 _tierIndex) public view returns (bool){
             return backers[_backer].fundedTiers[_tierIndex];
+        }
+
+        function getTiers() public view returns (Tier[] memory){
+            return tiers;
+        }
+
+        function tooglePause() public onlyOwner {
+            paused = !paused;
+        }
+
+        function getCampaignStatus() public view returns ( CampaginState) {
+            if (state == CampaginState.Active && block.timestamp > deadline) {
+                return address(this).balance >= goal ? CampaginState.Successful : CampaginState.Failed;
+               
+            }
+            return state;
+        } 
+
+        function extendDeadline(uint256 _daysToAdd)public onlyOwner campaignOpen{
+            deadline += _daysToAdd * 1 days;
         }
     
     

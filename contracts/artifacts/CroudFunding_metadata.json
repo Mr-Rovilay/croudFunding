@@ -98,6 +98,19 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_daysToAdd",
+						"type": "uint256"
+					}
+				],
+				"name": "extendDeadline",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_tierIndex",
 						"type": "uint256"
 					}
@@ -109,12 +122,55 @@
 			},
 			{
 				"inputs": [],
+				"name": "getCampaignStatus",
+				"outputs": [
+					{
+						"internalType": "enum CroudFunding.CampaginState",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getContractBalance",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTiers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "backers",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CroudFunding.Tier[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -185,6 +241,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "refund",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -247,6 +316,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "tooglePause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "withdraw",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -281,11 +357,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x5fc22e025f6e397e05d347060e2b8ba814c1db9d476ceaeb3c840b6aa804280a",
+			"keccak256": "0xc53e5140c26ee56e3b3edb3c07ec9badc3b61d403dda191d7ba2bbfc4f603495",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7b35fc6b24296fa4d8320480c8af3bae0b812a8acc0286cbe15748a656a24fb2",
-				"dweb:/ipfs/QmRgw72HogSNPPUpzYzWvD7My8am7XB3v4EPUvasjdQSGD"
+				"bzz-raw://494755764e3bda0bb406a60a9bd3dc022c7bba200016c0ab4c7822c56273a585",
+				"dweb:/ipfs/QmTghin8wnrH3XEMoPiiqSpujQKqo6NtEXaX9zf5P3U9Lt"
 			]
 		}
 	},
