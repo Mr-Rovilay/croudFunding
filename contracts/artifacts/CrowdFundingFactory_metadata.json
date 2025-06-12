@@ -45,6 +45,110 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_goal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_durationInDays",
+						"type": "uint256"
+					}
+				],
+				"name": "createCampaign",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllCampaigns",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "campaignAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "creationTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrowdFundingFactory.Campaign[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getUserCampaigns",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "campaignAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "creationTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrowdFundingFactory.Campaign[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -71,6 +175,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "togglePause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -83,7 +194,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "userCampigns",
+				"name": "userCampaigns",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -123,7 +234,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/CroudFundingFactory.sol": "CrowdFundingFactory"
+			"contracts/CrowdFundingFactory.sol": "CrowdFundingFactory"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -137,20 +248,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/CroudFunding.sol": {
-			"keccak256": "0xc53e5140c26ee56e3b3edb3c07ec9badc3b61d403dda191d7ba2bbfc4f603495",
+		"contracts/CrowdFunding.sol": {
+			"keccak256": "0x3efea29320d30ce9d2984660834a5ef109a045140a36156e0854c2f5f53738f9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://494755764e3bda0bb406a60a9bd3dc022c7bba200016c0ab4c7822c56273a585",
-				"dweb:/ipfs/QmTghin8wnrH3XEMoPiiqSpujQKqo6NtEXaX9zf5P3U9Lt"
+				"bzz-raw://6b21614e73c69f567e7aa65f750dd016cf258d61a76e403fe65cd0ba04cf30e6",
+				"dweb:/ipfs/QmPpVJ5GKq13LgdbyoiGJ4upV2gr434TwhboaJFjKomSuU"
 			]
 		},
-		"contracts/CroudFundingFactory.sol": {
-			"keccak256": "0x111ab3899de030730a4b0bd5a0d1ad00f5f443574898e43f69acd4cac98fdf76",
+		"contracts/CrowdFundingFactory.sol": {
+			"keccak256": "0x45bfce7a4bf4d894eada9d85f73c947949e8e9481034568e1ffc0071b1024c2b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5aeb1b494c65ae2e204c66585608760e83475aa1552c70dd52b496bc6877e329",
-				"dweb:/ipfs/QmcAp7UvDQ6F5NjXQFK4PmZzFzb64VQp7DLxzmdsLXN8ww"
+				"bzz-raw://d842ce578d3c529316764fe5059058c91a0418fa6cde3a2b208719d543b1b5a1",
+				"dweb:/ipfs/QmSAkk9TJ2h3hzm1AmFXGdC3ehe7RMKeM8pKA24WVaZ6T6"
 			]
 		}
 	},

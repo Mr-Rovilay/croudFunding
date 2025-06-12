@@ -347,7 +347,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/CroudFunding.sol": "CroudFunding"
+			"contracts/CrowdFunding.sol": "CroudFunding"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -361,7 +361,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/CroudFunding.sol": {
+		"contracts/CrowdFunding.sol": {
 			"keccak256": "0xa4e088be652b07ea0902b3c990e7dd40e32fb79b935329319dfd7424970411d6",
 			"license": "MIT",
 			"urls": [
