@@ -43,6 +43,7 @@ _;
     }
 
     constructor(
+        address _owner,
         string memory _name,
         string memory _description,
         uint256 _goal,
@@ -52,7 +53,7 @@ _;
             description = _description;
             goal = _goal;
             deadline = block.timestamp + (_durationInDays * 1 days);
-            owner = msg.sender;
+            owner = _owner;
             state = CampaginState.Active;
         }
 
